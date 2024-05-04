@@ -1,7 +1,7 @@
 streamlit
 pandas
 numpy
-oauthclient
+oauth2client
 gspread
 seaborn
 matplotlib
