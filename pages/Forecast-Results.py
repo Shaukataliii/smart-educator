@@ -59,7 +59,7 @@ def load_model():
     """Loads the model and returns it."""
     try:
         print("Loading the model")
-        with open("pages\school_MlModel.pkl", 'rb') as model_file:
+        with open("pages/school_MlModel.pkl", 'rb') as model_file:
             model=pickle.load(model_file)
     except:
         st.error("Model loading failed.")
