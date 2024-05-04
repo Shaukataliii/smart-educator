@@ -63,7 +63,7 @@ def load_model():
         
         # creating absolute path of model file
         model_filename="school_MlModel.pkl"
-        dir_path = os.path.dirname(os.path.realpath(__file__)
+        dir_path = os.path.dirname(os.path.realpath(__file__))
         model_file_path=os.path.join(dir_path, model_filename)
         st.write(model_file_path)
 
