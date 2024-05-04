@@ -62,6 +62,8 @@ def load_model():
         with open("school_MlModel.pkl", 'rb') as model_file:
             model=pickle.load(model_file)
     except:
+        st.error("Model loading failed.")
+        print("Model loading failed.")
         model=1
     
     return model
@@ -317,5 +319,5 @@ if submit_btn:
         prediction=inference_model(load_model(), stud_input)
         # transforming the position and presenting it.
         prediction=transform_position(prediction)
-        st.write(f"You may get {prediction} position in your final term exams")
+        st.write(f"Your predicted position is: :blue[{prediction}].")
     
