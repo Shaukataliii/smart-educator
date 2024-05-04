@@ -62,7 +62,6 @@ def load_model():
         with open("pages/school_MlModel.pkl", 'rb') as model_file:
             model=pickle.load(model_file)
     except:
-        st.error("Model loading failed.")
         print("Model loading failed.")
         model=1
     
@@ -313,11 +312,17 @@ if submit_btn:
     stud_input=pd.DataFrame([vals], columns=feats)
 
     # writting created dataframe
-    st.dataframe(stud_input)
+    # st.dataframe(stud_input)
     # load model and inference with it
     with st.spinner("Predicting..."):
-        prediction=inference_model(load_model(), stud_input)
-        # transforming the position and presenting it.
-        prediction=transform_position(prediction)
-        st.write(f"Your predicted position is: :blue[{prediction}].")
+
+        model=load_model()
+        # if model loading failed
+        if model==1:
+            st.error("Model loading failed.")
+        else:
+            prediction=inference_model(model, stud_input)
+            # transforming the position and presenting it.
+            prediction=transform_position(prediction)
+            st.write(f"Your predicted position is: :blue[{prediction}].")
     
