@@ -65,7 +65,7 @@ def load_model():
         model_filename="school_MlModel.pkl"
         dir_path = os.path.dirname(os.path.realpath(__file__))
         model_file_path=os.path.join(dir_path, model_filename)
-        st.write(model_file_path)
+        # st.write(model_file_path)
 
         with open(model_file_path, 'rb') as model_file:
             model=pickle.load(model_file)
