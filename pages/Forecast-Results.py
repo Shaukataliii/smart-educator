@@ -43,6 +43,7 @@ from time import time
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
+import os
 
 
 # setting page configurations
@@ -59,7 +60,14 @@ def load_model():
     """Loads the model and returns it."""
     try:
         print("Loading the model")
-        with open("pages/school_MlModel.pkl", 'rb') as model_file:
+        
+        # creating absolute path of model file
+        model_filename="school_MlModel.pkl"
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        model_file_path=os.path.join(dir_path, model_filename)
+        st.write(model_file_path)
+
+        with open(model_file_path, 'rb') as model_file:
             model=pickle.load(model_file)
     except:
         print("Model loading failed.")
