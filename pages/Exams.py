@@ -208,14 +208,18 @@ if submit_btn:
         
         row_to_append=[selected_year, selected_month, selected_day, clas, section, selected_class_incharge, student_name, guardian_name, relation, gender, "", selected_exam_subj, selected_exam_subj_teach, selected_exam_subj_t_marks, selected_exam_subj_o_marks, percentage, selected_class, selected_student]
         # condition checking same entry
-        # converting row to dataframe
-        row_df = pd.DataFrame([row_to_append], columns=df.columns)
-        # Check if the row_df is present in the DataFrame df
-        same_row_exists = (df == row_df.iloc[0]).all(axis=1).any()
+        # JUST UNCOMMENT THE FOLLOWING 4 LINES TO ADD DUPLICATE ROW CHECKING SYSTEM
+        #  # converting row to dataframe
+        # row_df = pd.DataFrame([row_to_append], columns=df.columns)
+        #  # Check if the row_df is present in the DataFrame df
+        # same_row_exists = (df == row_df.iloc[0]).all(axis=1).any()
         
+        same_row_exists=False
+
         # if the same entry already exists
         if(same_row_exists):
-            st.error("Same details already exist. Try updating date or update details using the update records tab.")
+            # st.error("Same details already exist. Try updating date or update details using the update records tab.")
+            print("Same row exists")
 
         else:
             st.write("Everything is fine.")

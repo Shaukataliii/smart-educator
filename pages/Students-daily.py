@@ -221,9 +221,9 @@ if submit_btn:
     row_to_append=[selected_year, selected_month, selected_day, clas, section, selected_class_incharge, student_name, guardian_name, relation, gender, stud_present_status, stud_on_time_status, stud_pro_uni_status, stud_punished_status, "", selected_test_subj, selected_test_subj_teach, selected_test_subj_t_marks, selected_test_subj_o_marks]
     # condition checking same entry
     # converting row to dataframe
-    row_df = pd.DataFrame([row_to_append], columns=df.columns[:19])
+    # row_df = pd.DataFrame([row_to_append], columns=df.columns[:19])
     # Check if the row_df is present in the DataFrame df
-    same_row_exists = (df.iloc[:, :19] == row_df.iloc[0]).all(axis=1).any()
+    # same_row_exists = (df.iloc[:, :19] == row_df.iloc[0]).all(axis=1).any()
     
     # if anything is null
     if cond_1 or cond_2 or cond_3 or cond_4 or cond_5 or cond_6 or cond_7 or cond_8 or cond_9 or cond_10 or cond_11 or cond_12:
@@ -232,8 +232,8 @@ if submit_btn:
     elif(selected_test_subj_o_marks > selected_test_subj_t_marks):
         st.error("Obtained marks are greater than total marks.")
     # if the same entry already exists
-    elif(same_row_exists):
-        st.error("Same details already exist. Try updating date or update details using the update records tab.")
+    # elif(same_row_exists):
+        # st.error("Same details already exist. Try updating date or update details using the update records tab.")
 
     else:
         st.write("Everything is fine.")
