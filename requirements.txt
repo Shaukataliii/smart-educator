@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+oauthclient
+gspread
+seaborn
+matplotlib
+datetime
+time
