@@ -164,7 +164,7 @@ with ui_year_col:
     entered_year=st.number_input("Year", value=2024, help="Enter the year for which you want to see results.")
 
 with ui_month_col:
-    entered_month=st.number_input("Month", value=4, max_value=12, help="Enter the month for which you want to see results.")
+    entered_month=st.number_input("Month", value=3, max_value=12, help="Enter the month for which you want to see results.")
 
 with ui_day_col:
     entered_day=st.number_input("Day", value=3, max_value=31, help="Enter the day for which you want to see results.")
